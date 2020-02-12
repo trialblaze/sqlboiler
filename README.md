@@ -259,11 +259,11 @@ available.
 #### Download
 
 ```shell
-go get -u -t github.com/trialblaze/sqlboiler
+go get -u -t github.com/volatiletech/sqlboiler
 
 # Also install the driver of your choice, there exists psql, mysql, mssql
 # These are separate binaries.
-go get github.com/trialblaze/sqlboiler/drivers/sqlboiler-psql
+go get github.com/volatiletech/sqlboiler/drivers/sqlboiler-psql
 ```
 
 #### Configuration
@@ -362,7 +362,7 @@ generate models for, we can invoke the sqlboiler command line utility.
 
 ```text
 SQL Boiler generates a Go ORM from template files, tailored to your database schema.
-Complete documentation is available at http://github.com/trialblaze/sqlboiler
+Complete documentation is available at http://github.com/volatiletech/sqlboiler
 
 Usage:
   sqlboiler [flags] <driver>
@@ -997,7 +997,7 @@ safe, but be careful!
 
 ```go
 // Dot import so we can access query mods directly instead of prefixing with "qm."
-import . "github.com/trialblaze/sqlboiler/queries/qm"
+import . "github.com/volatiletech/sqlboiler/queries/qm"
 
 // Use a raw query against a generated struct (Pilot in this example)
 // If this query mod exists in your call, it will override the others.
@@ -1137,7 +1137,7 @@ in combination with your own custom, non-generated model.
 
 ### Binding
 
-For a comprehensive ruleset for `Bind()` you can refer to our [godoc](https://godoc.org/github.com/trialblaze/sqlboiler/queries#Bind).
+For a comprehensive ruleset for `Bind()` you can refer to our [godoc](https://godoc.org/github.com/volatiletech/sqlboiler/queries#Bind).
 
 The `Bind()` [Finisher](#finisher) allows the results of a query built with
 the [Raw SQL](#raw-query) method or the [Query Builder](#query-building) methods to be bound
@@ -1410,7 +1410,7 @@ tx.Rollback()
 
 It's also worth noting that there's a way to take advantage of `boil.SetDB()`
 by using the
-[boil.BeginTx()](https://godoc.org/github.com/trialblaze/sqlboiler/boil#BeginTx)
+[boil.BeginTx()](https://godoc.org/github.com/volatiletech/sqlboiler/boil#BeginTx)
 function. This opens a transaction using the globally stored database.
 
 ### Debug Logging
@@ -1485,7 +1485,7 @@ greylist in cases where you want to insert a Go zero value.
 **NOTE:** CreatedAt/UpdatedAt are not included in `Whitelist` automatically.
 
 See the documentation for
-[boil.Columns.InsertColumnSet](https://godoc.org/github.com/trialblaze/sqlboiler/boil/#Columns.InsertColumnSet)
+[boil.Columns.InsertColumnSet](https://godoc.org/github.com/volatiletech/sqlboiler/boil/#Columns.InsertColumnSet)
 for more details.
 
 ```go
@@ -1537,7 +1537,7 @@ documentation above for more details.
 **NOTE:** CreatedAt/UpdatedAt are not included in `Whitelist` automatically.
 
 See the documentation for
-[boil.Columns.UpdateColumnSet](https://godoc.org/github.com/trialblaze/sqlboiler/boil/#Columns.UpdateColumnSet)
+[boil.Columns.UpdateColumnSet](https://godoc.org/github.com/volatiletech/sqlboiler/boil/#Columns.UpdateColumnSet)
 for more details.
 
 ```go
@@ -1805,8 +1805,8 @@ You *must* use a DSN flag in MySQL connections, see: [Requirements](#requirement
 
 #### Where is the homepage?
 
-The homepage for the [SQLBoiler](https://github.com/trialblaze/sqlboiler) [Golang ORM](https://github.com/trialblaze/sqlboiler)
-generator is located at: https://github.com/trialblaze/sqlboiler
+The homepage for the [SQLBoiler](https://github.com/volatiletech/sqlboiler) [Golang ORM](https://github.com/volatiletech/sqlboiler)
+generator is located at: https://github.com/volatiletech/sqlboiler
 
 ## Benchmarks
 
