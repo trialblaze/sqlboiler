@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/friendsofgo/errors"
-	"github.com/volatiletech/sqlboiler/boil"
-	"github.com/volatiletech/sqlboiler/strmangle"
+	"github.com/trialblaze/sqlboiler/boil"
+	"github.com/trialblaze/sqlboiler/strmangle"
 )
 
 type loadRelationshipState struct {

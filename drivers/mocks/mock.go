@@ -1,9 +1,9 @@
 package mocks
 
 import (
-	"github.com/volatiletech/sqlboiler/drivers"
-	"github.com/volatiletech/sqlboiler/importers"
-	"github.com/volatiletech/sqlboiler/strmangle"
+	"github.com/trialblaze/sqlboiler/drivers"
+	"github.com/trialblaze/sqlboiler/importers"
+	"github.com/trialblaze/sqlboiler/strmangle"
 )
 
 func init() {

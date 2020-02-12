@@ -3,8 +3,8 @@ package qm
 import (
 	"strings"
 
-	"github.com/volatiletech/sqlboiler/queries"
-	"github.com/volatiletech/sqlboiler/queries/qmhelper"
+	"github.com/trialblaze/sqlboiler/queries"
+	"github.com/trialblaze/sqlboiler/queries/qmhelper"
 )
 
 // QueryMod modifies a query object.
@@ -118,6 +118,24 @@ func (qm innerJoinQueryMod) Apply(q *queries.Query) {
 // InnerJoin on another table
 func InnerJoin(clause string, args ...interface{}) QueryMod {
 	return innerJoinQueryMod{
+		clause: clause,
+		args:   args,
+	}
+}
+
+type outerLeftJoinQueryMod struct {
+	clause string
+	args   []interface{}
+}
+
+// Apply implements QueryMod.Apply.
+func (qm outerLeftJoinQueryMod) Apply(q *queries.Query) {
+	queries.AppendOuterLeftJoin(q, qm.clause, qm.args...)
+}
+
+// OuterLeftJoin on another table
+func OuterLeftJoin(clause string, args ...interface{}) QueryMod {
+	return outerLeftJoinQueryMod{
 		clause: clause,
 		args:   args,
 	}

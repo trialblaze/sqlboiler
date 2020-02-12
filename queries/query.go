@@ -5,8 +5,8 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/volatiletech/sqlboiler/boil"
-	"github.com/volatiletech/sqlboiler/drivers"
+	"github.com/trialblaze/sqlboiler/boil"
+	"github.com/trialblaze/sqlboiler/drivers"
 )
 
 // joinKind is the type of join
@@ -285,6 +285,11 @@ func SetFrom(q *Query, from ...string) {
 // AppendInnerJoin on the query.
 func AppendInnerJoin(q *Query, clause string, args ...interface{}) {
 	q.joins = append(q.joins, join{clause: clause, kind: JoinInner, args: args})
+}
+
+// AppendOuterJoin on the query.
+func AppendOuterLeftJoin(q *Query, clause string, args ...interface{}) {
+	q.joins = append(q.joins, join{clause: clause, kind: JoinOuterLeft, args: args})
 }
 
 // AppendHaving on the query.
