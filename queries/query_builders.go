@@ -87,11 +87,11 @@ func buildSelectQuery(q *Query) (*bytes.Buffer, []interface{}) {
 		argsLen := len(args)
 		joinBuf := strmangle.GetBuffer()
 		for _, j := range q.joins {
-			switch {
-			case j.kind == JoinInner:
+			switch j.kind {
+			case JoinInner:
 				fmt.Fprintf(joinBuf, " INNER JOIN %s", j.clause)
 				args = append(args, j.args...)
-			case j.kind == JoinOuterLeft:
+			case JoinOuterLeft:
 				fmt.Fprintf(joinBuf, " LEFT JOIN %s", j.clause)
 				args = append(args, j.args...)
 			default:
