@@ -7,7 +7,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/volatiletech/sqlboiler/strmangle"
+	"github.com/trialblaze/sqlboiler/strmangle"
 )
 
 var (
@@ -87,11 +87,16 @@ func buildSelectQuery(q *Query) (*bytes.Buffer, []interface{}) {
 		argsLen := len(args)
 		joinBuf := strmangle.GetBuffer()
 		for _, j := range q.joins {
-			if j.kind != JoinInner {
-				panic("only inner joins are supported")
+			switch j.kind {
+			case JoinInner:
+				fmt.Fprintf(joinBuf, " INNER JOIN %s", j.clause)
+				args = append(args, j.args...)
+			case JoinOuterLeft:
+				fmt.Fprintf(joinBuf, " LEFT JOIN %s", j.clause)
+				args = append(args, j.args...)
+			default:
+				panic("only inner joins and left outer joins are supported")
 			}
-			fmt.Fprintf(joinBuf, " INNER JOIN %s", j.clause)
-			args = append(args, j.args...)
 		}
 		var resp string
 		if q.dialect.UseIndexPlaceholders {

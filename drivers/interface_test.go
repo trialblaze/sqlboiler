@@ -3,7 +3,7 @@ package drivers
 import (
 	"testing"
 
-	"github.com/volatiletech/sqlboiler/strmangle"
+	"github.com/trialblaze/sqlboiler/strmangle"
 )
 
 type testMockDriver struct{}

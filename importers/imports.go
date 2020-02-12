@@ -10,7 +10,7 @@ import (
 	"github.com/spf13/cast"
 
 	"github.com/friendsofgo/errors"
-	"github.com/volatiletech/sqlboiler/strmangle"
+	"github.com/trialblaze/sqlboiler/strmangle"
 )
 
 // Collection of imports for various templating purposes
@@ -202,20 +202,20 @@ func NewDefaultImports() Collection {
 		},
 		ThirdParty: List{
 			`"github.com/friendsofgo/errors"`,
-			`"github.com/volatiletech/sqlboiler/boil"`,
-			`"github.com/volatiletech/sqlboiler/queries"`,
-			`"github.com/volatiletech/sqlboiler/queries/qm"`,
-			`"github.com/volatiletech/sqlboiler/queries/qmhelper"`,
-			`"github.com/volatiletech/sqlboiler/strmangle"`,
+			`"github.com/trialblaze/sqlboiler/boil"`,
+			`"github.com/trialblaze/sqlboiler/queries"`,
+			`"github.com/trialblaze/sqlboiler/queries/qm"`,
+			`"github.com/trialblaze/sqlboiler/queries/qmhelper"`,
+			`"github.com/trialblaze/sqlboiler/strmangle"`,
 		},
 	}
 
 	col.Singleton = Map{
 		"boil_queries": {
 			ThirdParty: List{
-				`"github.com/volatiletech/sqlboiler/drivers"`,
-				`"github.com/volatiletech/sqlboiler/queries"`,
-				`"github.com/volatiletech/sqlboiler/queries/qm"`,
+				`"github.com/trialblaze/sqlboiler/drivers"`,
+				`"github.com/trialblaze/sqlboiler/queries"`,
+				`"github.com/trialblaze/sqlboiler/queries/qm"`,
 			},
 		},
 		"boil_types": {
@@ -224,8 +224,8 @@ func NewDefaultImports() Collection {
 			},
 			ThirdParty: List{
 				`"github.com/friendsofgo/errors"`,
-				`"github.com/volatiletech/sqlboiler/boil"`,
-				`"github.com/volatiletech/sqlboiler/strmangle"`,
+				`"github.com/trialblaze/sqlboiler/boil"`,
+				`"github.com/trialblaze/sqlboiler/strmangle"`,
 			},
 		},
 	}
@@ -237,10 +237,10 @@ func NewDefaultImports() Collection {
 			`"testing"`,
 		},
 		ThirdParty: List{
-			`"github.com/volatiletech/sqlboiler/boil"`,
-			`"github.com/volatiletech/sqlboiler/queries"`,
-			`"github.com/volatiletech/sqlboiler/randomize"`,
-			`"github.com/volatiletech/sqlboiler/strmangle"`,
+			`"github.com/trialblaze/sqlboiler/boil"`,
+			`"github.com/trialblaze/sqlboiler/queries"`,
+			`"github.com/trialblaze/sqlboiler/randomize"`,
+			`"github.com/trialblaze/sqlboiler/strmangle"`,
 		},
 	}
 
@@ -259,7 +259,7 @@ func NewDefaultImports() Collection {
 			},
 			ThirdParty: List{
 				`"github.com/spf13/viper"`,
-				`"github.com/volatiletech/sqlboiler/boil"`,
+				`"github.com/trialblaze/sqlboiler/boil"`,
 			},
 		},
 		"boil_queries_test": {
@@ -272,7 +272,7 @@ func NewDefaultImports() Collection {
 				`"regexp"`,
 			},
 			ThirdParty: List{
-				`"github.com/volatiletech/sqlboiler/boil"`,
+				`"github.com/trialblaze/sqlboiler/boil"`,
 			},
 		},
 		"boil_suites_test": {
